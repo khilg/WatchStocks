@@ -1,7 +1,6 @@
 import React, {useState} from 'react'
 import "../StockBlog.css"
-import {Button, Modal, ModalHeader, ModalBody, ModalFooter, FormGroup, Label, Col, 
-Card, CardImg, CardText, CardBody, UncontrolledPopover
+import {Button, Modal, ModalHeader, ModalBody, ModalFooter, FormGroup, Label, Col
 } from 'reactstrap'
 import {Link} from 'react-router-dom'
 import {LocalForm, Control} from 'react-redux-form'
@@ -62,13 +61,13 @@ export const StockBlogs = props =>{
                     <FormGroup>
                          <Col>
                         <Label htmlfor="img1">Image 1</Label>
-                        <Control.text  model=".img1" name="img1" id="img1" className="form-control" placeholder="Image Name" />
+                        <Control.file  model=".img1" name="img1" id="img1"  />
                         </Col>
                     </FormGroup>
                     <FormGroup>
                          <Col>
                         <Label htmlfor="img2">Image 2</Label>
-                        <Control.text  model=".img2" name="img2" id="img2" className="form-control" placeholder="Image Name" />
+                        <Control.file  model=".img2" name="img2" id="img2" />
                         </Col>
                     </FormGroup>
                     <FormGroup>
@@ -99,6 +98,9 @@ export const StockBlogs = props =>{
 }
  
 function RenderStockBlogCard({stocksBlogs, deleteBlog}){
+
+    const [dropDownOpenId,setDropDownId] = useState();
+    const [dropDownOpen,setDropDown] = useState(false);
     const deleteSingleBlog = blogid =>{
         alert("Your are deleting"+ blogid)
         deleteBlog(blogid);
@@ -109,8 +111,12 @@ function RenderStockBlogCard({stocksBlogs, deleteBlog}){
                 <div className="blog__card" key={key}>
                     <div className="blog__heading">
                         <h5>{value.blogHeading}</h5>
-                        <MoreVertIcon  id="deleteIcon"/>
-                            <div className="blog__delete" onClick={()=>deleteSingleBlog(value.id)}>Delete</div>
+                        <MoreVertIcon key={key} onClick={()=> {setDropDownId(value.id)
+                        setDropDown(!dropDownOpen)}} />
+                        <div className={dropDownOpenId === value.id && dropDownOpen ? "blog__menu--show" : "blog__menu"} >
+                            <div  onClick={()=>deleteSingleBlog(value.id)}>Delete</div>
+                            <div>Update(soon)</div>
+                        </div>
                     </div>
                     <Link to={`/stockblogs/${value.id}`}>
                     <img src={`/assets/${value.img1}`} alt="" />

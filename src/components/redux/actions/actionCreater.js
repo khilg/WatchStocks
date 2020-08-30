@@ -102,7 +102,7 @@ axios({
   error => {
         throw error;
   })
-  .then(stockBlog => dispatch(addBlog(stockBlog)))
+  .then(stockBlog => dispatch(fetchBlogs()))
   .catch(error =>  { console.log('Post Stock', error.message); alert('Your Stock could not be Added\nError: '+error.message); });
 
 }

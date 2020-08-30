@@ -8,14 +8,12 @@
     color:black !important;
 }
 .blog__card{
+    
     width: 30%;
     margin:auto;
     padding: 10px;
-    transition: transform 100ms ease-in;
 }
-.blog__card:hover{
-    transform: scale(1.05);
-}
+
 .blog__card > a> img {
     width: 100%;
     margin:15px 0;
@@ -24,16 +22,22 @@
 .blog__heading{
     display: flex;
     justify-content: space-between;
+    position: relative;
 }
 .blog__heading > .MuiSvgIcon-root{
     cursor: pointer;
 }
-.blog__delete{
+.blog__menu{
     display: none;
-    width: 100px;
-    background-color: lightcoral;
-    text-align: center;
-    margin: auto;
+}
+.blog__menu--show{
+  
+    background-color: rgb(240, 240, 240);
+    border-radius: 10px;
+    padding: 10px;
     font-size: medium;
     cursor: pointer;
+    position: absolute;
+    right: -120px;
+    box-shadow:2px 2px 2px 2px #ccc;
 }
