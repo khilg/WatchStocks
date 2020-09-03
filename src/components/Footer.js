@@ -4,10 +4,10 @@ import CopyrightIcon from '@material-ui/icons/Copyright';
 export const Footer = () =>{
     return(
       <footer className="footer">
-            <div className="container text-center py-3">
-                <span className="watchstock-footer "> <CopyrightIcon /> CopyRights issue on WatchStocks 2020.
-              </span>
-            </div>
+                <div className="copyRight__footer"> 
+                <CopyrightIcon /> 
+                <p>CopyRights issue on WatchStocks 2020.</p>
+              </div>
       </footer>
     )
 }

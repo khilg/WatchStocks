@@ -2,12 +2,11 @@ import React, {useEffect} from 'react'
 import {Header } from './Header'
 import {Footer } from './Footer'
 import {Switch, Route, Redirect, withRouter} from 'react-router-dom'
-import {RiskCalculator} from './RiskCalculator'
 import {WatchList} from './WatchList'
 import {Todos} from './Todos'
 import {ExpenseTracker} from './ExpenseTracker'
-import {ProfitLossCalculator} from './ProfitLossCalculator'
 import {Home } from './Home'
+import {Calculator} from './Calculator'
 import {Cms} from './Cms'
 import { connect } from 'react-redux';
 import {postStocks, fetchStocks, deleteStock, updateStock, postStockBlog, fetchBlogs, deleteBlog
@@ -51,8 +50,7 @@ const mapStateToProps = state => {
     <Header />
     <Switch>
           <Route exact path="/home"><Home /></Route>
-          <Route exact path="/riskcalculator"><RiskCalculator /></Route>
-          <Route exact path="/profitlosscalculator"><ProfitLossCalculator /></Route>
+          <Route exact path="/calculator"><Calculator /></Route>
           <Route exact path="/watchlist"><WatchList postStocks={props.postStocks} 
             getStocks= {props.stocks.watchList} deleteStock={props.deleteStock} 
             resetWatchListForm ={props.resetWatchListForm}

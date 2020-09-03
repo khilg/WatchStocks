@@ -125,15 +125,26 @@ body, html  {
   text-decoration: line-through;
 }
 .footer{
-  height: 10vh;
-  background-color: black;
+  height: 15vh;
+  background-color: rgb(51, 51, 51);
   width: 100%;
- 
+  margin-top: 20px;
 }
-.watchstock-footer{
+.copyRight__footer{
+  display: flex;
+  justify-content: center;
+  align-items: center;
   color:white;
+  height: 100%;
 }
-
+.copyRight__footer p{
+  margin: 0;
+  padding-left: 10px;
+  font-size: 18px;
+}
+.copyRight__footer .MuiSvgIcon-root{
+  font-size: 30px;
+}
 .watch-list-container input,.watch-list-container select{
     outline: none;
     border-radius: .50rem;
@@ -153,3 +164,22 @@ body, html  {
   width: 100%;
 }
 
+.sidebar__cal{
+ 
+  background-color: rgb(50, 50, 50);
+  color: white;
+  font-size: 20px;
+  width : fit-content;
+  margin-top: 20px;
+  height: 100%;
+  padding: 20px;
+}
+
+hr.solid {
+  border-top: 3px solid #bbb;
+}
+
+.heigthVh{
+  height: 80vh;
+  margin-top: 50px;
+}

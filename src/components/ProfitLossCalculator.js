@@ -59,8 +59,8 @@ export const ProfitLossCalculator = () =>{
 }
 
     return(
-        <div>
-            <Form onSubmit={(e) => handleSubmit(e)} className="container py-4 text-white">
+        <div className='heigthVh'>
+            <Form onSubmit={(e) => handleSubmit(e)} className="container py-4">
             <Row>
             <Col md={5}>
             <FormGroup>

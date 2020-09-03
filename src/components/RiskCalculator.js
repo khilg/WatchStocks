@@ -2,9 +2,6 @@ import React, {useState} from 'react'
 import {Form, FormGroup, Label, Input, FormFeedback, Col, Button, Table,Row } from 'reactstrap'
 
 
-
-
-
 export const RiskCalculator = () =>{
 
 
@@ -58,8 +55,6 @@ export const RiskCalculator = () =>{
   const errors = ValidateErrors(totalRisk)
 
     const Showriskinput = ()=>{
-       
-
         return( 
             <>
         <FormGroup className="pt-4">
@@ -89,7 +84,7 @@ export const RiskCalculator = () =>{
 
 return(
 
-    <div className="container py-4">
+    <div className="container heigthVh">
     <Form className='' onSubmit={(e) => handleSubmit(e)}>
       <div className=''>
         <Button color='primary' className={totalRisk.selectedRisk === 'monthlyrisk'? 'outline' : null}  onClick={(e) => setTotalRisk({...totalRisk,selectedRisk : 'monthlyrisk', showriskinput : true}) }  >MonthlyRisk</Button>{'  '}
